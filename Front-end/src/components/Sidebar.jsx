@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaTachometerAlt, FaTicketAlt, FaBookmark, FaEnvelope, FaMoneyCheckAlt, FaCog, FaSignOutAlt } from 'react-icons/fa';
+import { FaTachometerAlt, FaTicketAlt, FaBookmark, FaEnvelope, FaCog, FaSignOutAlt } from 'react-icons/fa';
+import { RiRobot3Fill } from 'react-icons/ri';
 
 const Sidebar = () => {
   return (
@@ -23,8 +24,8 @@ const Sidebar = () => {
           <span>Message</span>
         </li>
         <li className="flex items-center space-x-4 py-3 px-4 rounded-xl cursor-pointer hover:bg-lime-400 hover:text-black transition-all duration-300">
-          <FaMoneyCheckAlt size={20} />
-          <span>Transaction</span>
+          <RiRobot3Fill size={20} />
+          <span>Explore's AI</span>
         </li>
         <li className="flex items-center space-x-4 py-3 px-4 rounded-xl cursor-pointer hover:bg-lime-400 hover:text-black transition-all duration-300">
           <FaCog size={20} />

@@ -1,19 +1,77 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './calendarStyles.css';
-import { FaUserCircle } from 'react-icons/fa'; 
+import { FaUserCircle } from 'react-icons/fa';
 
 const CalendarCard = () => {
   const [date, setDate] = useState(new Date());
+  const [festivals, setFestivals] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const fetchFestivals = async () => {
+      try {
+        const response = await fetch(
+          `https://calendarific.com/api/v2/holidays?api_key=c9E67RjySnoU6ZRuB4Z8pLF3uvATzNag&country=IN&year=2025`
+        );
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch festivals: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        console.log("API Response:", data);
+
+        if (isMounted && data.response.holidays) {
+          const tamilNaduFestivals = data.response.holidays
+            .filter(festival =>
+              [
+                "Puthandu",
+                "Chithirai Festival",
+                "Vaikasi Visakam",
+                "Aadi Perukku",
+                "Vinayaka Chaturthi",
+                "Ayudha Puja",
+                "Saraswati Puja",
+                "Vijaya Dasami",
+                "Deepavali",
+              ].some(f => festival.name.toLowerCase().includes(f.toLowerCase()))
+            )
+            .reduce((acc, festival) => {
+              const month = new Date(festival.date.iso).toLocaleString('en-US', { month: 'long' });
+              if (!acc[month]) acc[month] = [];
+              acc[month].push(festival);
+              return acc;
+            }, {});
+
+          setFestivals(tamilNaduFestivals);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Festival Fetch Error:", error.message);
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    fetchFestivals();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <div className="calendar-container">
       <div className="profile-section">
-        <FaUserCircle size={32} color="#b0b0b0" className="profile-icon" /> 
+        <FaUserCircle size={32} color="#b0b0b0" className="profile-icon" />
         <span className="profile-name">Anni</span>
       </div>
-      
+
       <div className="calendar-wrapper">
         <Calendar
           onChange={setDate}
@@ -32,9 +90,32 @@ const CalendarCard = () => {
           }}
         />
       </div>
-      <div className="booking-section">
-        <h5>Bookings</h5>
-        <p>Upcoming bookings or actions can go here.</p>
+
+      {/* Festival Section (Replacing Bookings) */}
+      <div className="festival-section">
+        <h5>Festivals</h5>
+        {loading ? (
+          <p>Loading festival data...</p>
+        ) : error ? (
+          <p className="error-text">⚠️ {error}</p>
+        ) : Object.keys(festivals).length > 0 ? (
+          <div>
+            {Object.entries(festivals).map(([month, festivalList]) => (
+              <div key={month}>
+                <h6>{month}</h6>
+                <ul>
+                  {festivalList.map((festival, index) => (
+                    <li key={index}>
+                      <strong>{festival.name}</strong> - {festival.date.iso}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>No festivals found.</p>
+        )}
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
   position: fixed;
   right: 0;
   top: 0;
-  width: 20%;
+  width: 21%;
   height: 100vh; /* Full screen height */
   background-color: #0c1220;
   display: flex;
@@ -107,7 +107,7 @@
 }
 
 .react-calendar__tile--active {
-  background: #ff6c4d !important;
+  /* background: #ff6c4d !important; */
   background-color: #A3E635 !important;
   font-weight: bold;
 }
