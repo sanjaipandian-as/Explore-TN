@@ -147,3 +147,68 @@
     position: relative;
   }
 }
+
+.festival-section {
+  background: #1b1e2f;
+  color: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  width: 100%;
+  max-width: 350px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.festival-section h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.festival-card {
+  background: #2a2d42;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.festival-card h6 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #99c4ff;
+  margin-bottom: 5px;
+}
+
+.festival-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.festival-card li {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.festival-card li:last-child {
+  border-bottom: none;
+}
+
+.festival-name {
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.festival-date {
+  color: #bbb;
+  font-size: 12px;
+}
