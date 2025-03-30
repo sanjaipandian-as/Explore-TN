@@ -24,7 +24,6 @@ const CalendarCard = () => {
         }
 
         const data = await response.json();
-        console.log("API Response:", data);
 
         if (isMounted && data.response.holidays) {
           const tamilNaduFestivals = data.response.holidays
@@ -93,30 +92,32 @@ const CalendarCard = () => {
 
       {/* Festival Section (Replacing Bookings) */}
       <div className="festival-section">
-        <h5>Festivals</h5>
-        {loading ? (
-          <p>Loading festival data...</p>
-        ) : error ? (
-          <p className="error-text">⚠️ {error}</p>
-        ) : Object.keys(festivals).length > 0 ? (
-          <div>
-            {Object.entries(festivals).map(([month, festivalList]) => (
-              <div key={month}>
-                <h6>{month}</h6>
-                <ul>
-                  {festivalList.map((festival, index) => (
-                    <li key={index}>
-                      <strong>{festival.name}</strong> - {festival.date.iso}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p>No festivals found.</p>
-        )}
-      </div>
+  <h5>Festivals</h5>
+  {loading ? (
+    <p>Loading festival data...</p>
+  ) : error ? (
+    <p className="error-text">⚠️ {error}</p>
+  ) : Object.keys(festivals).length > 0 ? (
+    <div className="festival-list">
+      {Object.entries(festivals).map(([month, festivalList]) => (
+        festivalList.map((festival, index) => (
+          <div key={index} className="festival-card">
+            <div className="festival-info">
+              <strong className="festival-name">{festival.name}</strong>
+              <p className="festival-date"> {month} - {festival.date.iso} 📅</p>
+            </div>
+            <span className="date-icon"></span> 
+          </div> 
+        ))
+      ))}
+    </div>
+  ) : (
+    <p>No festivals found.</p>
+  )}
+</div>
+
+
+
     </div>
   );
 };

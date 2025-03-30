@@ -149,66 +149,68 @@
 }
 
 .festival-section {
-  background: #1b1e2f;
-  color: white;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
-  width: 100%;
-  max-width: 350px;
+  background: #1b2340;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  width: 86%;
+  max-width: 380px;
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 180px;
+  right: 25px;
+  color: white;
+  
+  
 }
 
 .festival-section h5 {
   font-size: 18px;
   font-weight: bold;
   color: #ffcc00;
-  margin-bottom: 10px;
   text-align: center;
+  margin-bottom: 15px;
 }
 
+/* Festival list (single container) */
+.festival-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Festival card (each entry) */
 .festival-card {
-  background: #2a2d42;
+  background: #2a303c;
   padding: 12px;
   border-radius: 8px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.festival-card h6 {
-  font-size: 14px;
-  font-weight: bold;
-  color: #99c4ff;
-  margin-bottom: 5px;
-}
-
-.festival-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.festival-card li {
-  font-size: 14px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 4px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: 0.3s ease;
 }
 
-.festival-card li:last-child {
-  border-bottom: none;
+.festival-card:hover {
+  background: #353c4a;
 }
 
+/* Festival name */
 .festival-name {
+  font-size: 16px;
   font-weight: bold;
-  color: #ffcc00;
+  color: #f8f9fa;
 }
 
+/* Festival date */
 .festival-date {
-  color: #bbb;
-  font-size: 12px;
+  font-size: 14px;
+  color: #b0b0b0;
+  margin-top: 4px;
+}
+
+/* Date icon */
+.date-icon {
+  font-size: 18px;
+  color: #ffcc00;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { LuSquareArrowOutUpRight } from "react-icons/lu";
 
 const destinations = [
   { id: 1, name: "Chennai", image: "https://wallpaperaccess.com/full/2273780.jpg" },
@@ -13,42 +14,62 @@ const destinations = [
 
 const DestinationCard = () => {
   return (
-    <div className="container mx-auto px-6 py-3">
+    <div className="container mx-auto px-5 py-1">
       {/* Left-aligned heading */}
-      <h2 className="text-3xl font-bold mb-8 text-gray-100 text-left">Popular Destinations in TAMIL NADU</h2>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <h2 className="text-3xl font-bold mb-2.5 text-gray-100 text-left">
+        Popular Destinations in TAMIL NADU
+      </h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 py-4">
         {destinations.map((destination) => (
-          <div 
-            key={destination.id} 
+          <div
+            key={destination.id}
             className="bg-gray-900 rounded-xl shadow-lg overflow-hidden transform transition hover:shadow-2xl"
           >
             {/* Image with Zoom-out effect on hover without changing width */}
             <div className="overflow-hidden">
-              <img 
-                src={destination.image} 
-                alt={destination.name} 
-                className="w-full h-44 object-cover transition-transform duration-300 hover:scale-110"
-                onError={(e) => e.target.src = "https://via.placeholder.com/300x200?text=No+Image"}
+              <img
+                src={destination.image}
+                alt={destination.name}
+                className="w-full h-46 object-cover transition-transform duration-300 hover:scale-110"
+                onError={(e) =>
+                  (e.target.src = "https://via.placeholder.com/300x200?text=No+Image")
+                }
               />
             </div>
             <div className="p-4 flex flex-col flex-grow">
-              <h3 className="text-lg font-semibold text-white mb-2">{destination.name}</h3>
-              <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-500 transition">
-                Explore Now
+              <h3 className="text-lg font-semibold text-white">{destination.name}</h3>
+            </div>
+
+            <hr className="border-gray-700 w-full" />
+            <div className="relative group flex justify-center ">
+              <button className="w-full cursor-pointer text-white py-2 relative overflow-hidden transition-all duration-300 flex items-center justify-center gap-2">
+                <span className="relative z-10 flex items-center gap-2">
+                  <span className="group-hover:text-black group-hover:font-bold transition-all duration-300 ">
+                    Explore Now
+                  </span>
+                  <LuSquareArrowOutUpRight className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-black" />
+                </span>
+                <span className="absolute inset-0 bg-lime-500 scale-y-0 origin-bottom transition-transform duration-300 group-hover:scale-y-100"></span>
               </button>
             </div>
+
           </div>
         ))}
       </div>
 
+
+
+
+
+
       {/* Explore More Places button with modern text and stylish effect */}
-      <div className="mt-8 flex justify-center">
-        <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg hover:from-pink-500 hover:to-purple-500 transition text-lg font-semibold shadow-lg transform hover:scale-105">
+      <div className="mt-3 flex justify-center">
+        <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-6 rounded-lg hover:from-pink-500 hover:to-purple-500 transition text-lg font-semibold shadow-lg transform hover:scale-105">
           Uncover More Wonders
         </button>
       </div>
-    </div>
+    </div >
   );
 };
 

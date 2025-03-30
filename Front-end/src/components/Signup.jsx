@@ -9,11 +9,11 @@ const Signup = () => {
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="bg-white w-full max-w-sm p-6 rounded-xl shadow-lg">
-        <div className="flex justify-between items-center border-b pb-2 mb-4">
-          <Link to="/login" className="w-1/2 text-center bg-gray-200 py-2 rounded-t-lg">
+        <div className="flex justify-between items-center border-b pb-2 mb-4 gap-2">
+          <Link to="/login" className="w-1/2 text-center text-black bg-gray-200 py-2 hover:bg-blue-600 rounded-lg">
             Login
           </Link>
-          <button className="w-1/2 text-center text-white bg-blue-600 py-2 rounded-t-lg">
+          <button className="w-1/2 text-center text-white bg-blue-600  py-2 rounded-lg ">
             Signup
           </button>
         </div>

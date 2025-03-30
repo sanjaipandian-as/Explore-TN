@@ -1,9 +1,15 @@
 import React from 'react';
 import { FaBell } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Topbar = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+
+    // Show Topbar only on the Dashboard ("/") page
+    if (location.pathname !== '/') {
+        return null;
+    }
 
     return (
         <div className="flex items-center py-4 px-6 bg-[#0c1220] text-white gap-4">
@@ -21,6 +27,7 @@ const Topbar = () => {
                     Search
                 </button>
             </div>
+
             <div
                 className="relative bg-[#1f1f2e] p-4 cursor-pointer hover:bg-lime-400 transition-colors duration-300 group"
                 style={{ borderRadius: '30px' }}
