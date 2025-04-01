@@ -45,7 +45,7 @@ const Sidebar = () => {
         </li>
 
         <li>
-          <Link to="/Explore-ai" className={`flex items-center space-x-4 py-3 px-4 rounded-xl cursor-pointer ${isActive("/explore-ai")}`}>
+          <Link to="/Explore-ai" className={`flex items-center space-x-4 py-3 px-4 rounded-xl cursor-pointer ${isActive("/Explore-ai")}`}>
             <RiRobot3Fill size={22} />
             <span className="text-lg">Explore's AI</span>
           </Link>

@@ -45,8 +45,8 @@ const DestinationCard = () => {
             <hr className="border-gray-700 w-full" />
             <div className="relative group flex justify-center ">
               <button className="w-full cursor-pointer text-white py-2 relative overflow-hidden transition-all duration-300 flex items-center justify-center gap-2">
-                <span className="relative z-10 flex items-center gap-2">
-                  <span className="group-hover:text-black group-hover:font-bold transition-all duration-300 ">
+                <span className="relative z-10 flex  items-center gap-2">
+                  <span className="group-hover:text-black group-hover:font-bold transition-all  duration-300 ">
                     Explore Now
                   </span>
                   <LuSquareArrowOutUpRight className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-black" />
