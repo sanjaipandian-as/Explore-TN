@@ -10,6 +10,7 @@ const destinations = [
   { id: 6, name: "Valpaarai", image: "https://www.tamilnadutourism.tn.gov.in/img/pages/mobile/valparai-1655317113_9a764f170250c439648c.webp" },
   { id: 7, name: "KolliHills", image: "https://media.istockphoto.com/id/1216022846/photo/kolli-hills-kollimalai-seventy-hairpin-bends-located-in-central-tamil-nadu-india.jpg?s=612x612&w=0&k=20&c=Zwa-SlGmibGqfMed5vvWBEfngRTrD-P-bHIuh3P6frU=" },
   { id: 8, name: "Theni", image: "https://www.kolukkumalai.com/gallery/g-0016-tn.jpg" },
+  { id:9 , name: " Coonoor", image:"https://media1.thrillophilia.com/filestore/f0ufvscjst2argui3nfh4ikavh7i_1556099835_shutterstock_657980620.jpg?w=753&h=450&dpr=1.0"}
 ];
 
 const DestinationCard = () => {
@@ -20,13 +21,13 @@ const DestinationCard = () => {
         Popular Destinations in TAMIL NADU
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 py-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 py-4">
         {destinations.map((destination) => (
           <div
             key={destination.id}
             className="bg-gray-900 rounded-xl shadow-lg overflow-hidden transform transition hover:shadow-2xl"
           >
-            {/* Image with Zoom-out effect on hover without changing width */}
+            
             <div className="overflow-hidden">
               <img
                 src={destination.image}
