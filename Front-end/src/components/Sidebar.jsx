@@ -26,7 +26,7 @@ const Sidebar = () => {
         <li>
           <Link to="/booking" className={`flex items-center space-x-4 py-3 px-4 rounded-xl cursor-pointer ${isActive("/booking")}`}>
             <FaTicketAlt size={22} />
-            <span className="text-lg">Bookings</span>
+            <span className="text-lg">User's Pick</span>
           </Link>
         </li>
 
@@ -40,7 +40,7 @@ const Sidebar = () => {
         <li>
           <Link to="/messages" className={`flex items-center space-x-4 py-3 px-4 rounded-xl cursor-pointer ${isActive("/messages")}`}>
             <FaEnvelope size={22} />
-            <span className="text-lg">Messages</span>
+            <span className="text-lg">Bookings</span>
           </Link>
         </li>
 
