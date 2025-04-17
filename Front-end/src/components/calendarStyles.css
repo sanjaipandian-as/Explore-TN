@@ -113,11 +113,12 @@
 }
 
 .react-calendar__tile:hover {
-  background: #ff6c4d !important;
-  color: black !important; /* Ensure text is visible */
-  border-radius: 50%; /* Keep circular shape */
-  transition: 0.3s ease-in-out; /* Smooth effect */
+  background: none !important;
+  color: none !important;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
 }
+
 
 .booking-section {
   width: 90%;

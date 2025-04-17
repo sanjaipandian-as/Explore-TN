@@ -12,6 +12,10 @@ import ChatApp from "./pages/ExploreAI";
 import Chennai from "./PlacePage/Chennai";
 import Madurai from "./PlacePage/Madurai";
 import Ooty from "./PlacePage/Ooty";
+import Guides from "./pages/Guides";
+import SimpleGuideForm from "./components/GuideForm";
+import GuideProfile from "./components/GuideProfile";
+
 
 function App() {
   return (
@@ -24,12 +28,19 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/booking" element={<Booking />} /> 
-            <Route path="/Favourite" element={<Favorite/>}/>
-            <Route path="/Explore-ai" element={<ChatApp/>}/>
-            <Route path="/Chennai" element={<Chennai/>}/>
-            <Route path="/Madurai" element={<Madurai/>}/>
-            <Route path="/Ooty" element={<Ooty/>}/>
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/Guides" element={<Guides />} />
+            <Route path="/Favourite" element={<Favorite />} />
+            <Route path="/Explore-ai" element={<ChatApp />} />
+            <Route path="/Chennai" element={<Chennai />} />
+            <Route path="/Madurai" element={<Madurai />} />
+            <Route path="/Ooty" element={<Ooty />} />
+            <Route path="/GuideForm" element={<SimpleGuideForm />} />
+            <Route path="/guides/:id" element={<GuideProfile />} />
+
+
+
+            
 
           </Routes>
         </div>

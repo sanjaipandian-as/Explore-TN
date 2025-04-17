@@ -28,24 +28,24 @@ const Topbar = () => {
                 </button>
             </div>
 
-            <div
+            {/* <div
                 className="relative bg-[#1f1f2e] p-4 cursor-pointer hover:bg-lime-400 transition-colors duration-300 group"
                 style={{ borderRadius: '30px' }}
             >
                 <FaBell className="text-gray-300 text-xl transition-colors duration-300 group-hover:text-black" />
                 <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
-            </div>
+            </div> */}
 
             <div className="flex space-x-4">
                 <button
                     onClick={() => navigate('/login')}
-                    className="px-5 py-2 bg-red-400 text-gray-800 rounded-lg shadow-md hover:bg-red-500 transition"
+                    className="px-5 py-3 bg-red-400 text-gray-800 rounded-lg shadow-md hover:bg-red-500 transition"
                 >
                     Login
                 </button>
                 <button
                     onClick={() => navigate('/signup')}
-                    className="px-5 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition"
+                    className="px-5 py-3 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition"
                 >
                     Signup
                 </button>

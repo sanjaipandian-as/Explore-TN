@@ -10,6 +10,9 @@ const CalendarCard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // State to store the user's name
+  const [userName, setUserName] = useState("");
+
   useEffect(() => {
     let isMounted = true;
 
@@ -64,11 +67,17 @@ const CalendarCard = () => {
     };
   }, []);
 
+  // Simulate setting the user's name after sign-in
+  const handleSignIn = (name) => {
+    setUserName(name); // Update the name when the user signs in
+  };
+
   return (
     <div className="calendar-container">
       <div className="profile-section">
         <FaUserCircle size={32} color="#b0b0b0" className="profile-icon" />
-        <span className="profile-name">Anni</span>
+        {/* Displaying user's name dynamically */}
+        <span className="profile-name">{userName || "Anni"}</span>
       </div>
 
       <div className="calendar-wrapper">
@@ -90,34 +99,31 @@ const CalendarCard = () => {
         />
       </div>
 
-      {/* Festival Section (Replacing Bookings) */}
+      {/* Festival Section */}
       <div className="festival-section">
-  <h5>Festivals</h5>
-  {loading ? (
-    <p>Loading festival data...</p>
-  ) : error ? (
-    <p className="error-text">⚠️ {error}</p>
-  ) : Object.keys(festivals).length > 0 ? (
-    <div className="festival-list">
-      {Object.entries(festivals).map(([month, festivalList]) => (
-        festivalList.map((festival, index) => (
-          <div key={index} className="festival-card">
-            <div className="festival-info">
-              <strong className="festival-name">{festival.name}</strong>
-              <p className="festival-date"> {month} - {festival.date.iso} 📅</p>
-            </div>
-            <span className="date-icon"></span> 
-          </div> 
-        ))
-      ))}
-    </div>
-  ) : (
-    <p>No festivals found.</p>
-  )}
-</div>
-
-
-
+        <h5>Festivals</h5>
+        {loading ? (
+          <p>Loading festival data...</p>
+        ) : error ? (
+          <p className="error-text">⚠️ {error}</p>
+        ) : Object.keys(festivals).length > 0 ? (
+          <div className="festival-list">
+            {Object.entries(festivals).map(([month, festivalList]) => (
+              festivalList.map((festival, index) => (
+                <div key={index} className="festival-card">
+                  <div className="festival-info">
+                    <strong className="festival-name">{festival.name}</strong>
+                    <p className="festival-date"> {month} - {festival.date.iso} 📅</p>
+                  </div>
+                  <span className="date-icon"></span> 
+                </div> 
+              ))
+            ))}
+          </div>
+        ) : (
+          <p>No festivals found.</p>
+        )}
+      </div>
     </div>
   );
 };
