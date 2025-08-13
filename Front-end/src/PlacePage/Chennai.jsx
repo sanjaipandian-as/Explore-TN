@@ -38,13 +38,13 @@ function Chennai() {
   const places = {
     Beaches: [
       { title: "Marina Beach", content: "One of the longest beaches in the world.", image: "https://media.gettyimages.com/id/624091590/photo/marina-beach-chennai-city.jpg?s=612x612&w=0&k=20&c=E5J4odZa-ZHIt9QCk_iZKQS57p67fvb2VuOAaxQgWEo=" },
-      { title: "Elliot’s Beach", content: "A calm beach known for its peaceful atmosphere.", image: "/images/elliots.jpg" },
-      { title: "Breezy Beach", content: "A small yet beautiful beach in Chennai.", image: "/images/breezy.jpg" },
-      { title: "Thiruvanmiyur Beach", content: "A less crowded and serene beach.", image: "/images/thiruvanmiyur.jpg" }
+      { title: "Elliot’s Beach", content: "A calm beach known for its peaceful atmosphere.", image: "https://chennaitourism.travel/images/places-to-visit/headers/edward-elliot-s-beach-chennai-tourism-entry-fee-timings-holidays-reviews-header.jpg" },
+      { title: "Breezy Beach", content: "A small yet beautiful beach in Chennai.", image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/c6/d9/4d/thiruvanmiyur-sea-beach.jpg?w=800&h=-1&s=1" },
+      { title: "Thiruvanmiyur Beach", content: "A less crowded and serene beach.", image: "https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/thiruvanmiyur-beach-1656504132_f41b6605537f2931f14e.webp" }
     ],
     Historical: [
-      { title: "Fort St. George", content: "One of the oldest British forts in India.", image: "/images/fortstgeorge.jpg" },
-      { title: "Santhome Basilica", content: "A neo-Gothic church built over St. Thomas' tomb.", image: "/images/santhome.jpg" },
+      { title: "Fort St. George", content: "One of the oldest British forts in India.", image: "https://tse2.mm.bing.net/th?id=OIP.0kzUrmsyVSKh8BrbNnqZBwHaDW&pid=Api&P=0&h=180" },
+      { title: "Santhome Basilica", content: "A neo-Gothic church built over St. Thomas' tomb.", image: "https://tse2.mm.bing.net/th?id=OIP.3ff1cvjOKpD1FOdxUcBupAHaE0&pid=Api&P=0&h=180" },
       { title: "Kapaleeshwarar Temple", content: "A famous temple dedicated to Lord Shiva.", image: "/images/kapaleeshwarar.jpg" },
       { title: "Valluvar Kottam", content: "A monument dedicated to Tamil poet Thiruvalluvar.", image: "/images/valluvar.jpg" },
       { title: "Parthasarathy Temple", content: "An ancient temple dedicated to Lord Krishna.", image: "/images/parthasarathy.jpg" }

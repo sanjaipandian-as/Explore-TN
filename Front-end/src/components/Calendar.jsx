@@ -9,9 +9,29 @@ const CalendarCard = () => {
   const [festivals, setFestivals] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  // State to store the user's name
   const [userName, setUserName] = useState("");
+
+  // Trip planning states
+  const [tripStart, setTripStart] = useState(null);
+  const [tripEnd, setTripEnd] = useState(null);
+
+  // Load saved trip dates from localStorage on mount
+  useEffect(() => {
+    const storedStart = localStorage.getItem('tripStart');
+    const storedEnd = localStorage.getItem('tripEnd');
+    if (storedStart && storedEnd) {
+      setTripStart(new Date(storedStart));
+      setTripEnd(new Date(storedEnd));
+    }
+  }, []);
+
+  // Save trip dates to localStorage when updated
+  useEffect(() => {
+    if (tripStart && tripEnd) {
+      localStorage.setItem('tripStart', tripStart);
+      localStorage.setItem('tripEnd', tripEnd);
+    }
+  }, [tripStart, tripEnd]);
 
   useEffect(() => {
     let isMounted = true;
@@ -22,9 +42,7 @@ const CalendarCard = () => {
           `https://calendarific.com/api/v2/holidays?api_key=c9E67RjySnoU6ZRuB4Z8pLF3uvATzNag&country=IN&year=2025`
         );
 
-        if (!response.ok) {
-          throw new Error(`Failed to fetch festivals: ${response.status} ${response.statusText}`);
-        }
+        if (!response.ok) throw new Error(`Failed to fetch festivals`);
 
         const data = await response.json();
 
@@ -61,28 +79,35 @@ const CalendarCard = () => {
     };
 
     fetchFestivals();
-
     return () => {
       isMounted = false;
     };
   }, []);
 
-  // Simulate setting the user's name after sign-in
-  const handleSignIn = (name) => {
-    setUserName(name); // Update the name when the user signs in
+  const handleCalendarClick = (selectedDate) => {
+    if (!tripStart || (tripStart && tripEnd)) {
+      setTripStart(selectedDate);
+      setTripEnd(null);
+    } else {
+      if (selectedDate > tripStart) {
+        setTripEnd(selectedDate);
+      } else {
+        setTripStart(selectedDate);
+      }
+    }
+    setDate(selectedDate);
   };
 
   return (
     <div className="calendar-container">
       <div className="profile-section">
         <FaUserCircle size={32} color="#b0b0b0" className="profile-icon" />
-        {/* Displaying user's name dynamically */}
         <span className="profile-name">{userName || "Anni"}</span>
       </div>
 
       <div className="calendar-wrapper">
         <Calendar
-          onChange={setDate}
+          onChange={handleCalendarClick}
           value={date}
           next2Label={null}
           prev2Label={null}
@@ -91,15 +116,16 @@ const CalendarCard = () => {
           }
           showNeighboringMonth={false}
           tileClassName={({ date, view }) => {
-            if (view === 'month' && (date.getDay() === 0 || date.getDay() === 6)) {
-              return 'weekend-day';
+            if (view === 'month') {
+              const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+              const isInTrip = tripStart && tripEnd && date >= tripStart && date <= tripEnd;
+              return isInTrip ? 'trip-date' : isWeekend ? 'weekend-day' : null;
             }
             return null;
           }}
         />
       </div>
 
-      {/* Festival Section */}
       <div className="festival-section">
         <h5>Festivals</h5>
         {loading ? (
@@ -113,15 +139,24 @@ const CalendarCard = () => {
                 <div key={index} className="festival-card">
                   <div className="festival-info">
                     <strong className="festival-name">{festival.name}</strong>
-                    <p className="festival-date"> {month} - {festival.date.iso} 📅</p>
+                    <p className="festival-date">{month} - {festival.date.iso} 📅</p>
                   </div>
-                  <span className="date-icon"></span> 
-                </div> 
+                  <span className="date-icon"></span>
+                </div>
               ))
             ))}
           </div>
         ) : (
           <p>No festivals found.</p>
+        )}
+
+        
+        {tripStart && tripEnd && (
+          <div className="trip-saved-box">
+            <h5>🧳 Your Trip Plan</h5>
+            <p><strong>From:</strong> {tripStart.toDateString()}</p>
+            <p><strong>To:</strong> {tripEnd.toDateString()}</p>
+          </div>
         )}
       </div>
     </div>

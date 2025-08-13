@@ -157,7 +157,7 @@
   width: 86%;
   max-width: 380px;
   position: absolute;
-  bottom: 180px;
+  bottom: 110px;
   right: 25px;
   color: white;
   
@@ -213,5 +213,49 @@
 /* Date icon */
 .date-icon {
   font-size: 18px;
-  color: #ffcc00;
+  color:  #FF6C4D;
 }
+
+
+.trip-date {
+  background-color:  #FF6C4D !important; /* pink highlight */
+  color: white !important;
+  border-radius: 50%;
+}
+
+.trip-saved-box {
+  background-color:  #0c1220;
+  padding: 12px;
+  margin-top: 16px;
+  border-left: 4px solid #f06292;
+  border-radius: 6px;
+}
+
+.trip-saved-box h5 {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  color: #d81b60;
+}
+
+
+.section {
+  background-color:  #0c1220;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-section {
+  border-left: 4px solid #2196f3;
+}
+
+
+
+
+.trip-date {
+  background-color:  #FF6C4D !important;
+  color: white !important;
+  border-radius: 50%;
+}
+

@@ -7,10 +7,10 @@ const destinations = [
   { id: 1, name: "Chennai", image: "https://wallpaperaccess.com/full/2273780.jpg", path: "/Chennai" },
   { id: 2, name: "Madurai", image: "https://wallpaperaccess.com/full/6697117.jpg", path: "/Madurai" },
   { id: 3, name: "Nilgiris", image: "https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/ooty-1655457424_bca80f81e8391ebdaaca.webp", path: "/Ooty" },
-  { id: 4, name: "Dindigul", image: "https://wallpaperaccess.com/full/9301891.jpg", path: "/Kodaikanal" },
-  { id: 5, name: "Salem", image: "https://t3.ftcdn.net/jpg/03/46/77/80/240_F_346778049_beFmFk61ShrmeRdasboUEs9hY6XsPqdr.jpg", path: "/Yercaud" },
-  { id: 6, name: "Coimbatore", image: "https://www.tamilnadutourism.tn.gov.in/img/pages/mobile/valparai-1655317113_9a764f170250c439648c.webp", path: "/Valparai" },
-  { id: 7, name: "Namakkal", image: "https://media.istockphoto.com/id/1216022846/photo/kolli-hills-kollimalai-seventy-hairpin-bends-located-in-central-tamil-nadu-india.jpg?s=612x612&w=0&k=20&c=Zwa-SlGmibGqfMed5vvWBEfngRTrD-P-bHIuh3P6frU=", path: "/Kollihills" },
+  { id: 4, name: "Dindugal", image: "https://wallpaperaccess.com/full/9301891.jpg", path: "/Dindugal" },
+  { id: 5, name: "Salem", image: "https://t3.ftcdn.net/jpg/03/46/77/80/240_F_346778049_beFmFk61ShrmeRdasboUEs9hY6XsPqdr.jpg", path: "/salem" },
+  { id: 6, name: "Coimbatore", image: "https://www.tamilnadutourism.tn.gov.in/img/pages/mobile/valparai-1655317113_9a764f170250c439648c.webp", path: "Coimbatore" },
+  { id: 7, name: "Namakkal", image: "https://media.istockphoto.com/id/1216022846/photo/kolli-hills-kollimalai-seventy-hairpin-bends-located-in-central-tamil-nadu-india.jpg?s=612x612&w=0&k=20&c=Zwa-SlGmibGqfMed5vvWBEfngRTrD-P-bHIuh3P6frU=", path: "/Namakal" },
   { id: 8, name: "Theni", image: "https://www.kolukkumalai.com/gallery/g-0016-tn.jpg", path: "/Theni" },
   { id: 9, name: "Coonoor", image: "https://media1.thrillophilia.com/filestore/f0ufvscjst2argui3nfh4ikavh7i_1556099835_shutterstock_657980620.jpg?w=753&h=450&dpr=1.0", path: "/Coonoor" },
 
@@ -42,7 +42,7 @@ const destinations = [
   { id: 34, name: "Tiruvannamalai", image: "https://www.tamilnadutourism.tn.gov.in/img/pages/mobile/arunachaleshwar-temple-1656172461_377e21b0eb59b54127af.webp", path: "/Tiruvannamalai" },
   { id: 35, name: "Tiruvarur", image: "https://www.tamilnadutourism.tn.gov.in/img/pages/mobile/thyagaraja-temple-tiruvarur-1657273412_b0741db08d7c60b43a27.webp", path: "/Tiruvarur" },
   { id: 36, name: "Vellore", image: "https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/vellore-1656056881_efdda9aca6d6e0fc5968.webp", path: "/Vellore" },
-  { id: 37, name: "Viluppuram", image: "https://up.yimg.com/ib/th?id=OIP.wh1aOKKOHaQ_1VXRy1VVoQHaEK&pid=Api&rs=1&c=1&qlt=95&w=202&h=113", path: "/Viluppuram" },
+  { id: 37, name: "Viluppuram", image: "https://windows10spotlight.com/wp-content/uploads/2023/01/c21d5a38a28e1da43fd555d1cb5555a1.jpg", path: "/Viluppuram" },
   { id: 38, name: "Virudhunagar", image: "https://www.tamilnadutourism.tn.gov.in/img/pages/mobile/srivilliputhur-andal-temple-1656235670_f09fd6a2fd09c2ca4a73.webp", path: "/Virudhunagar" }
 ];
 

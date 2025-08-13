@@ -77,7 +77,8 @@ const Section = ({ title, places }) => {
 
 
 function Ooty() {
-  const cityDescription = "Ooty, known as the 'Queen of Hill Stations,' is a picturesque town in Tamil Nadu. Famous for its lush green landscapes, beautiful lakes, waterfalls, and viewpoints, Ooty attracts nature lovers and adventure seekers alike.";
+  const cityDescription = "Nilgiris district, nestled in the Western Ghats of Tamil Nadu, is renowned for its breathtaking hill stations, tea plantations, and rich biodiversity. Home to popular destinations like Ooty, Coonoor, and Kotagiri, the district offers cool climate, scenic views, and a perfect escape for nature enthusiasts and travelers.";
+  ;
 
   const places = {
     lakes_and_water_bodies: [
